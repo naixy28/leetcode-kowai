@@ -7,6 +7,6 @@
 | *?y | Title | Tag | Note |
 | --- | --------- | ---- | --------- |
 | ? | 26. 删除排序数组中的重复项 | Array |
-| *? | 189. Rotate Array | Array |
+| *? | 189. Rotate Array | Array | calculate minimun rotate times first |
 
 
