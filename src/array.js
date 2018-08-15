@@ -45,6 +45,69 @@ var rotate = function(nums, k) {
     }
 };
 
-var nums = [-1]
 
-console.log(rotate(nums, 2), nums)
+/**
+ * 122. 买卖股票的最佳时机 II
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let min = prices[0] || 0
+    let prev = prices[0] || 0
+    let sum = 0
+
+    for (let i = 0; i <= prices.length; i++) {
+      if (prices[i] < prev || !prices[i]) {
+        sum += prev - min
+        min = prices[i]
+      }
+      if (prices[i] < min) {
+        min = prices[i]
+        prev = prices[i]
+      }
+
+
+      prev = prices[i]
+    }
+
+    return sum
+};
+
+/**
+ * 217. 存在重复元素
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+  const o = {}
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!o[nums[i]]) {
+      o[nums[i]] = 1
+    } else {
+      return true
+    }
+
+  }
+  return false
+};
+
+
+/**
+ * 136. 只出现一次的数字
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+  let a = nums[0]
+
+    for (let i = 1; i < nums.length; i++) {
+      a = a ^ nums[i]
+    }
+
+    return a
+};
+
+var nums =[4,1,2,1,2]
+
+console.log(singleNumber(nums))
