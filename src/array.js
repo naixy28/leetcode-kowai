@@ -108,6 +108,23 @@ var singleNumber = function(nums) {
     return a
 };
 
-var nums =[4,1,2,1,2]
+/**
+ * 350. 两个数组的交集 II
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function(nums1, nums2) {
+   return nums1.filter(ele => {
+     let i = nums2.indexOf(ele)
+     if (i >= 0) {
+       delete nums2[i]
+       return true
+     }
+     return false
+   })
+};
 
-console.log(singleNumber(nums))
+var nums1 = [], nums2 = [1, 1]
+
+console.log(intersect(nums1, nums2))
