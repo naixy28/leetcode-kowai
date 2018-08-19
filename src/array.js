@@ -125,6 +125,50 @@ var intersect = function(nums1, nums2) {
    })
 };
 
-var nums1 = [], nums2 = [1, 1]
+/**
+ * 66. 加一
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+  let i = digits.length - 1
 
-console.log(intersect(nums1, nums2))
+  while (i >= 0) {
+    if (digits[i] + 1 === 10) {
+      digits[i] = 0
+      i--
+    } else {
+      digits[i] = digits[i] + 1
+      break
+    }
+  }
+  if (digits[0] === 0) {
+    digits.unshift(1)
+  }
+  return digits
+};
+
+/**
+ * 283. Move Zeroes
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+  let z
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === 0) {
+      z = i
+      for (let j = z + 1; j < nums.length; j++) {
+        if (nums[j] !== 0) {
+          nums[z] = nums[j]
+          nums[j] = 0
+          break
+        }
+      }
+    }
+  }
+};
+
+var nums1 = [0]
+
+console.log(moveZeroes(nums1), nums1)
