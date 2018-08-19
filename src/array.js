@@ -169,6 +169,10 @@ var moveZeroes = function(nums) {
   }
 };
 
+module.exports = {
+  moveZeroes: moveZeroes
+}
+
 var nums1 = [0]
 
 console.log(moveZeroes(nums1), nums1)

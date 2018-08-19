@@ -1,5 +1,12 @@
-### note
+## Try Leet Code
 
+### to run test
+```
+npm run test
+
+```
+
+### Notes
 1. \* failed once
 2. ? thinked for a while
 3. y passed easily
