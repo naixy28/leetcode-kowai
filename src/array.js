@@ -169,10 +169,93 @@ var moveZeroes = function(nums) {
   }
 };
 
+/**
+ * 1. Two Sum
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+  const o = {}
+
+  for (let i = 0; i < nums.length; i++) {
+    o[nums[i]] = i
+  }
+
+  for (let j = 0; j < nums.length; j++) {
+    const idx = o[target - nums[j]]
+
+    if (idx >= 0 && idx !== j) {
+      return [j, idx]
+    }
+  }
+};
+
+
+/**
+ * 36. Valid Sudoku
+ * @param {character[][]} board
+ * @return {boolean}
+ */
+var isValidSudoku = function(board) {
+  const checkLine = arr => {
+    let i = arr.length - 1
+
+    while (i >= 0) {
+      if (1 <= arr[i] && arr[i] <= 9) {
+        if (arr.indexOf(arr[i]) !== i) {
+          return false
+        }
+      } else {
+        if (arr[i] !== '.') {
+          return false
+        }
+      }
+      i--
+    }
+    return true
+  }
+
+  // check lines
+  for (let i = 0; i < 9; i++) {
+    if (!checkLine(board[i])) {
+      return false
+    }
+  }
+
+  // check columns
+  for (let i = 0; i < 9; i++) {
+    const testArr = []
+
+    for (let j = 0; j < 9; j++) {
+      testArr.push(board[j][i])
+    }
+    if (!checkLine(testArr)) {
+      return false
+    }
+  }
+
+  // check cube
+  const step = 3
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const testArr = []
+      for (let k = 0; k < 3; k++) {
+        for (let l = 0; l < 3; l++) {
+          testArr.push(board[i * step + k][j * step + l])
+        }
+      }
+      if (!checkLine(testArr)) {
+        return false
+      }
+    }
+  }
+
+  return true
+};
+
 module.exports = {
-  moveZeroes: moveZeroes
+  moveZeroes,
+  twoSum,
+  isValidSudoku,
 }
-
-var nums1 = [0]
-
-console.log(moveZeroes(nums1), nums1)
