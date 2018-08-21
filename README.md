@@ -21,6 +21,7 @@ npm run test
 | *y | 66. Plus One | Array | 需要注意进位
 | y | 283. Move Zeroes | Array | 尝试降低时间复杂度
 | y | 1. Two Sum | Array | 
-| y | 36. Valid Sudoku | Array | 
+| ? | 36. Valid Sudoku | Array | 
+| ? | 48. Rotate Image | Array | 做法太耿直，写的太复杂 可以通过多次矩阵变换降低复杂度
 
 

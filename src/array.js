@@ -254,8 +254,48 @@ var isValidSudoku = function(board) {
   return true
 };
 
+/**
+ * 48. Rotate Image
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+var rotate = function(matrix) {
+  const step = matrix.length
+  const getNextPos = (x, y, step) => [y, step - x - 1]
+  const rotatedMap = {}
+  const rotateOnce = (mat, k, map) => {
+    let pos = k.split(',')
+    let nextPos = getNextPos(pos[0], pos[1], step)
+    let prev = mat[pos[0]][pos[1]]
+    let next
+
+    while (!map[nextPos.join(',')]) {
+      next = mat[nextPos[0]][nextPos[1]]
+      mat[nextPos[0]][nextPos[1]] = prev
+      prev = next
+
+      pos = nextPos
+      map[pos.join(',')] = true
+      nextPos = getNextPos(pos[0], pos[1], step)
+      
+    }
+  }
+
+  for (let i = 0; i < step; i++) {
+    for (let j = 0; j < step; j++) {
+      let key = i + ',' + j
+      
+      if (!rotatedMap[key]) {
+        rotateOnce(matrix, key, rotatedMap)
+      }
+    }
+  }
+  
+};
+
 module.exports = {
   moveZeroes,
   twoSum,
   isValidSudoku,
+  rotate,
 }
