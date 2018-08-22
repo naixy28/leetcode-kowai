@@ -1,8 +1,15 @@
 ## Try Leet Code
 
-### to run test
+### to run tests
 ```
-npm run test
+// run each test in /test
+npm test
+
+// run single test in /test
+npm test -- array-test
+// which equals to 
+jest array-test
+
 ```
 
 ### Notes
@@ -12,6 +19,7 @@ npm run test
 
 | *?y | Title | Tag | Note |
 | --- | --------- | ---- | --------- |
+| Array
 | ? | 26. 删除排序数组中的重复项 | Array |
 | *? | 189. Rotate Array | Array | calculate minimun rotate times first |
 | ***? | 122. 买卖股票的最佳时机 II | Array | 双指针找一组最大落差后结算一次 注意结算时机 |
@@ -23,5 +31,9 @@ npm run test
 | y | 1. Two Sum | Array | 
 | ? | 36. Valid Sudoku | Array | 
 | ? | 48. Rotate Image | Array | 做法太耿直，写的太复杂 可以通过多次矩阵变换降低复杂度
+| String
+| y | 344. Reverse String | String | too javascript code, should use some classic ways |
+| y | 7. Reverse Integer | String | 硬伤, js doesnt fit in this problem
+
 
 
