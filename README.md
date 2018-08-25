@@ -34,6 +34,7 @@ jest array-test
 | String
 | y | 344. Reverse String | String | too javascript code, should use some classic ways |
 | y | 7. Reverse Integer | String | 硬伤, js doesnt fit in this problem
+| *y | 387. First Unique Character in a String | String | 考虑记录已经检查过的字母
 
 
 

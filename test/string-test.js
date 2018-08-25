@@ -26,3 +26,18 @@ describe('reverse', () => {
   })
 
 })
+
+describe('firstUniqChar', () => {
+  const firstUniqChar = stringCode.firstUniqChar
+
+  test('leetcode', () => {
+    expect(firstUniqChar('leetcode')).toEqual(0)
+  })
+  test('loveleetcode', () => {
+    expect(firstUniqChar('loveleetcode')).toEqual(2)
+  })
+  test('cc', () => {
+    expect(firstUniqChar('cc')).toEqual(-1)
+  })
+
+})

@@ -32,7 +32,26 @@ var reverse = function(x) {
   return ret
 };
 
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+    const a = s.split('')
+    const o = {}
+
+    for (let i = 0; i < a.length; i++) {
+      if (o[a[i]]) continue
+      if (a.lastIndexOf(a[i]) === i) {
+        return i
+      }
+      o[a[i]] = true
+    }
+    return -1
+};
+
 module.exports = {
   reverseString,
   reverse,
+  firstUniqChar,
 }
