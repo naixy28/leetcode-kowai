@@ -35,6 +35,9 @@ jest array-test
 | y | 344. Reverse String | String | too javascript code, should use some classic ways |
 | y | 7. Reverse Integer | String | 硬伤, js doesnt fit in this problem
 | *y | 387. First Unique Character in a String | String | 考虑记录已经检查过的字母
+| y | 242. Valid Anagram | String | 
+| *y | 125. Valid Palindrome | String | alphanumeric characters includes 0-9 a-z A-Z
+| *y | 8. String to Integer (atoi) | String | 考虑 + - 符号
 
 
 

@@ -50,8 +50,61 @@ var firstUniqChar = function(s) {
     return -1
 };
 
+/**
+ * 242. Valid Anagram
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    const sort = (x, y) => y.charCodeAt() - x.charCodeAt()
+    const sA = s.split('').sort(sort)
+    const tA = t.split('').sort(sort)
+
+    return sA.join('') === tA.join('')
+};
+
+
+/**
+ * 125. Valid Palindrome
+ * @param {string} s
+ * @return {boolean}
+ * @description 用了非常暴力的方法解决，若追求性能，可以尝试两头向内做循环判断
+ */
+var isPalindrome = function(s) {
+  const strReg = /^[a-zA-Z0-9]{1}$/
+  const filtered = s.split('')
+    .filter(char => strReg.test(char))
+    .map(c => c.toLowerCase())
+
+  return filtered.join('') === filtered.reverse().join('')
+
+};
+
+/**
+ * 8. String to Integer (atoi)
+ * @param {string} str
+ * @return {number}
+ */
+var myAtoi = function(str) {
+  const MIN = -2147483648
+  const MAX = 2147483647
+  const r = /^\s*([-|+])?(\d+)/
+  const ret = str.match(r)
+
+  if (!ret) return 0
+
+  const sign = ret[1]
+  const num = (sign === '-' ? -1 : 1) * ret[ret.length - 1]
+
+  return num > MAX ? MAX : num < MIN ? MIN : num
+};
+
 module.exports = {
   reverseString,
   reverse,
   firstUniqChar,
+  isAnagram,
+  isPalindrome,
+  myAtoi,
 }
