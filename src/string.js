@@ -100,6 +100,43 @@ var myAtoi = function(str) {
   return num > MAX ? MAX : num < MIN ? MIN : num
 };
 
+/**
+ * 28. Implement strStr()
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+  if (!needle) return 0
+
+  const len = needle.length
+  let i = 0
+  let j = 0
+
+  while (i < haystack.length) {
+    if (haystack[i] !== needle[j]) {
+      i = i - j
+      j = 0
+    } else {
+      j++
+    }
+    i++
+
+    if (j === len) {
+      return i - len
+    }
+  }
+  return -1
+};
+
+/**
+ * @param {number} n
+ * @return {string}
+ */
+var countAndSay = function(n) {
+  // TODO
+};
+
 module.exports = {
   reverseString,
   reverse,
@@ -107,4 +144,6 @@ module.exports = {
   isAnagram,
   isPalindrome,
   myAtoi,
+  strStr,
+  countAndSay,
 }

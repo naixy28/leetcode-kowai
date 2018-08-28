@@ -38,6 +38,7 @@ jest array-test
 | y | 242. Valid Anagram | String | 
 | *y | 125. Valid Palindrome | String | alphanumeric characters includes 0-9 a-z A-Z
 | *y | 8. String to Integer (atoi) | String | 考虑 + - 符号
+| ***y | 28. Implement strStr() | String | 没用KMP居然能98%
 
 
 
