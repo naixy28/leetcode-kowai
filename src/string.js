@@ -130,11 +130,66 @@ var strStr = function(haystack, needle) {
 };
 
 /**
+ * 38. Count and Say
  * @param {number} n
  * @return {string}
  */
 var countAndSay = function(n) {
-  // TODO
+  let s = undefined
+  let currNum
+  let currCount
+  let temp = []
+
+  do {
+    n--
+    if (!s) {
+      s = '1'
+      continue
+    }
+    
+    for (let i = 0; i <= s.length; i++) {
+      if (!currNum) {
+        currNum = s[i]
+        currCount = 1
+      } else if (currNum !== s[i]) {
+        temp.push(currCount, currNum)
+        currNum = s[i]
+        currCount = 1
+      } else {
+        currCount ++
+      }
+    }
+    s = temp.join('')
+    temp = []
+    currCount = 0
+    currNum = undefined
+
+  } while (n)
+
+  return s
+};
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+  let res = ''
+  const sCount = strs && strs.length
+
+  if (!strs[0]) return res
+
+  for (let i = 0; i < strs[0].length; i++) {
+    const s = strs[0][i]
+
+    for (let j = 1; j < sCount; j++) {
+      if (strs[j][i] !== s) {
+        return res
+      }
+    }
+    res += s
+  }
+  return res
 };
 
 module.exports = {
@@ -146,4 +201,5 @@ module.exports = {
   myAtoi,
   strStr,
   countAndSay,
+  longestCommonPrefix,
 }

@@ -39,6 +39,8 @@ jest array-test
 | *y | 125. Valid Palindrome | String | alphanumeric characters includes 0-9 a-z A-Z
 | *y | 8. String to Integer (atoi) | String | 考虑 + - 符号
 | ***y | 28. Implement strStr() | String | 没用KMP居然能98%
+| y | 38. Count and Say | String | 死算
+| *y | 14. Longest Common Prefix | String | 优化O(n)，可以先sort一次，然后可以只比较第一个和最后一个string的前缀
 
 
 
