@@ -41,6 +41,9 @@ jest array-test
 | ***y | 28. Implement strStr() | String | 没用KMP居然能98%
 | y | 38. Count and Say | String | 死算
 | *y | 14. Longest Common Prefix | String | 优化O(n)，可以先sort一次，然后可以只比较第一个和最后一个string的前缀
+| Linked List
+| y | 237. Delete Node in a Linked List | Linked List | 
+| y | 19. Remove Nth Node From End of List | Linked List | one pass? 双指针 
 
 
 
