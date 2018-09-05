@@ -44,6 +44,7 @@ jest array-test
 | Linked List
 | y | 237. Delete Node in a Linked List | Linked List | 
 | y | 19. Remove Nth Node From End of List | Linked List | one pass? 双指针 
+| y | 206. Reverse Linked List | Linked List | 
 
 
 

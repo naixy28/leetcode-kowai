@@ -54,8 +54,51 @@ var removeNthFromEnd = function(head, n) {
   return head
 };
 
+/**
+ * 206. Reverse Linked List
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var reverseList = function(head) {
+  let prev = null
+  let current = null
+  let next = head
+
+  while (next) {
+    current = next
+    next = current.next
+    current.next = prev
+    prev = current
+  }
+  return prev
+};
+
+// recursive TODO
+var reverseList = function(head) {
+  let prevNode = null
+  let currNode = head
+
+  function r(prev, curr) {
+    if (curr && curr.next) {
+      return r(curr, curr.next).next = prev
+    } else {
+      return curr
+    }
+  }
+
+  return r(prevNode, currNode)
+};
+
 
 module.exports = {
   deleteNode,
   removeNthFromEnd,
+  reverseList,
 }
