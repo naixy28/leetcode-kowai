@@ -96,6 +96,62 @@ var reverseList = function(head) {
   return r(prevNode, currNode)
 };
 
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * 21. Merge Two Sorted Lists
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(l1, l2) {
+  let currL1 = l1
+  let currL2 = l2
+  let tail = null
+  let head = null
+
+  while (currL1 && currL2) {
+    if (currL1.val <= currL2.val) {
+      head = head || currL1
+      if (tail) {
+        tail.next = currL1
+      } 
+      tail = currL1
+      currL1 = currL1.next
+    } else {
+      if (head) {
+        tail.next = currL2
+        tail = currL2
+        currL2 = currL2.next
+      } else {
+        head = currL2
+        tail = head
+        currL2 = currL2.next
+      }
+    }
+  }
+
+  if (head) {
+    if (currL1) {
+      tail.next = currL1
+    }
+    if (currL2) {
+      tail.next = currL2
+    }
+  } else {
+    head = currL1 || currL2
+  }
+
+
+  return head 
+};
+
 
 module.exports = {
   deleteNode,
