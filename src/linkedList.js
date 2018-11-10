@@ -152,6 +152,86 @@ var mergeTwoLists = function(l1, l2) {
   return head 
 };
 
+/**
+ * 141. Linked List Cycle
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+  let ptr1 = head
+  
+  if (!ptr1) return false
+  
+  let ptr2 = head.next
+  
+  if (ptr1 === ptr2) return true
+  
+  while (ptr2 !== null) {
+      ptr1 = ptr1.next
+      ptr2 = ptr2.next
+      
+      if (ptr2 === ptr1) return true
+      if (ptr2 === null) return false
+      
+      ptr2 = ptr2.next
+      
+      if (ptr2 === ptr1) return true
+      
+  }
+  
+  return false
+};
+
+/**
+ * 234. Palindrome Linked List
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var isPalindrome = function(head) {
+  if (!head) return true
+  
+  let p1 = head
+  let p2 = head.next
+  let isEven = false
+  
+  if (!p2) return true
+  
+  // find middle
+  while (p2) {
+      p1 = p1.next
+      p2 = p2.next
+      
+      if (!p2) {
+          isEven = true
+          break
+      }
+      p2 = p2.next
+  }
+  
+  // reverse pre half
+  let prev= null
+  let current = head
+  let next = head.next
+  
+  while (current && next && current !== p1) {
+      current.next = prev
+      prev = current
+      current = next
+      next = next.next
+  }
+  
+  let s1 = prev
+  let s2 = isEven ? current : next
+  
+  
+  while (s1) {
+      if (s1.val !== s2.val) return false
+      s1 = s1.next
+      s2 = s2.next
+  }
+  return true
+};
+
 
 module.exports = {
   deleteNode,
