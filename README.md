@@ -1,6 +1,8 @@
 ## Try Leet Code
 
 ### to run tests
+从链表开始就没写test case
+
 ```
 // run each test in /test
 npm test
@@ -47,6 +49,11 @@ jest array-test
 | y | 206. Reverse Linked List | Linked List | head的指向，以及边界条件
 | *y | 141. Linked List Cycle | Linked List | 快慢指针
 | *****y | 234. Palindrome Linked List | Linked List | 快慢指针找中点 反转遍历
-
+| Binary Tree
+| *y | 104. Maximum Depth of Binary Tree | Linked List |
+| **y | 98. Validate Binary Search Tree| Linked List | 类似二分查找
+| ****y | 101. Symmetric Tree| Linked List | 递归最方便
+| **y | 102. Binary Tree Level Order Traversal| Linked List | 广度遍历
+| *y | 108. Convert Sorted Array to Binary Search Tree| Linked List | 
 
 
