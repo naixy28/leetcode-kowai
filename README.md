@@ -55,5 +55,7 @@ jest array-test
 | ****y | 101. Symmetric Tree| Linked List | 递归最方便
 | **y | 102. Binary Tree Level Order Traversal| Linked List | 广度遍历
 | *y | 108. Convert Sorted Array to Binary Search Tree| Linked List | 
+| Search And Sort
+| y | 278. First Bad Version| Search And Sort |
 
 
